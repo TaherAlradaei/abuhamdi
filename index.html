@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="معامل ديكورات أبو حمدي الحديثة - رواد النجارة الفاخرة، الأثاث المكتبي والمنزلي، وتصاميم CNC في جدة والمملكة.">
+    <meta name="keywords" content="نجارة, ديكور, خشب, أبو حمدي, أثاث فاخر, جدة, تصميم داخلي, CNC, أبواب">
+    <title>معامل ديكورات أبو حمدي الحديثة | فخامة الخشب</title>
+    
+    <!-- خطوط عربية عصرية من جوجل -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- مكتبة الأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- 1. Style Guide & Variables --- */
+        :root {
+            --color-gold: #d4af37;
+            --color-gold-light: #f3e5ab;
+            --color-wood-dark: #1a1510; /* Almost black wood */
+            --color-wood-accent: #3e2b20;
+            --color-black: #0a0a0a;
+            --color-text-main: #f5f5f5;
+            --color-text-muted: #b0b0b0;
+            --font-main: 'Tajawal', sans-serif;
+            --transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--color-black);
+            color: var(--color-text-main);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* --- UI Elements --- */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .gold-text {
+            color: var(--color-gold);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--color-gold);
+            margin: 15px auto 0;
+            box-shadow: 0 0 10px var(--color-gold);
+        }
+
+        /* زر فاخر */
+        .btn-luxury {
+            display: inline-block;
+            padding: 15px 40px;
+            border: 1px solid var(--color-gold);
+            color: var(--color-gold);
+            font-weight: 700;
+            font-size: 1.1rem;
+            background: transparent;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+            z-index: 1;
+        }
+
+        .btn-luxury::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: var(--color-gold);
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .btn-luxury:hover {
+            color: var(--color-black);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-luxury:hover::before {
+            width: 100%;
+        }
+
+        /* --- 2. Hero Section --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop') no-repeat center center/cover;
+            overflow: hidden;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(45deg, rgba(0,0,0,0.9), rgba(26,21,16,0.8));
+            z-index: 1;
+        }
+
+        /* تأثير ضوئي متحرك */
+        .light-beam {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 60%);
+            animation: rotateLight 15s linear infinite;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        @keyframes rotateLight {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1s ease forwards 0.5s;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--color-text-muted);
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+
+        /* --- 3. Vision & Mission --- */
+        .vision {
+            background-color: var(--color-wood-dark);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+        }
+
+        .vision-img {
+            height: 100%;
+            min-height: 500px;
+            background: url('https://images.unsplash.com/photo-1629088636952-6a782b6c7a7e?q=80&w=1000&auto=format&fit=crop') center/cover;
+            position: relative;
+        }
+        
+        /* تراكب خفيف للصورة */
+        .vision-img::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.3);
+        }
+
+        .vision-text {
+            padding: 80px;
+        }
+
+        .vision h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--color-gold);
+        }
+
+        .vision p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            border-right: 3px solid var(--color-gold);
+            padding-right: 20px;
+        }
+
+        /* --- 4. Services --- */
+        .services {
+            background-color: var(--color-black);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: #121212;
+            padding: 40px 30px;
+            border: 1px solid #222;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--color-gold);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* وميض ناعم عند التحويم */
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(212,175,55,0.05), transparent 70%);
+            opacity: 0;
+            transition: var(--transition);
+        }
+        .service-card:hover::after { opacity: 1; }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--color-gold);
+            margin-bottom: 25px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card ul {
+            margin-top: 15px;
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+        }
+        .service-card ul li { margin-bottom: 8px; position: relative; padding-right: 20px; }
+        .service-card ul li::before {
+            content: '•'; color: var(--color-gold); position: absolute; right: 0;
+        }
+
+        /* --- 5. Features (Why Us) --- */
+        .features {
+            background: radial-gradient(circle at center, #251e18, #0a0a0a);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-box {
+            text-align: center;
+            padding: 30px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .feature-box:hover {
+            background: rgba(212, 175, 55, 0.05);
+            border-color: var(--color-gold);
+        }
+
+        .feature-box h3 { margin: 15px 0 10px; color: var(--color-gold-light); }
+        .feature-box p { font-size: 0.9rem; color: #ccc; }
+
+        /* --- 6. Contact Section --- */
+        .contact {
+            position: relative;
+            background: url('https://images.unsplash.com/photo-1616486338812-3aeee0797db8?q=80&w=2000&auto=format&fit=crop') no-repeat center center/cover;
+            background-attachment: fixed;
+        }
+        
+        .contact-overlay {
+            background: rgba(10, 10, 10, 0.9);
+            padding: 100px 0;
+        }
+
+        .contact-content {
+            text-align: center;
+        }
+
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin: 50px 0;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .contact-icon-circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 2px solid var(--color-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--color-gold);
+            transition: var(--transition);
+        }
+
+        .contact-item:hover .contact-icon-circle {
+            background: var(--color-gold);
+            color: var(--color-black);
+            transform: rotate(360deg);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: #000;
+            padding: 20px 0;
+            text-align: center;
+            border-top: 1px solid #222;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* --- Animations & Utilities --- */
+        @keyframes fadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .vision { grid-template-columns: 1fr; }
+            .vision-img { min-height: 300px; }
+            .vision-text { padding: 40px 20px; }
+            .contact-details { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Hero Section -->
+    <header class="hero">
+        <div class="light-beam"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1>معامل ديكورات <span class="gold-text">أبو حمدي</span> الحديثة</h1>
+            <p>حيث تلتقي عراقة الخشب ودقة التصميم العصري لتصنع إرثاً يدوم</p>
+            <a href="#contact" class="btn-luxury">اطلب تصميمك الآن</a>
+        </div>
+    </header>
+
+    <!-- 2. Vision Section -->
+    <section class="vision">
+        <div class="vision-img"></div>
+        <div class="vision-text reveal">
+            <h2>الرؤية والرسالة</h2>
+            <p>نحو صناعة ديكور تُجسّد خيالك بجودة فاخرة تستحق أن تكون جزءًا من إرثك.</p>
+            <br>
+            <p style="border:none; color: var(--color-text-muted);">
+                نجمع بين حرفية النجارة التقليدية الأصيلة وبين أحدث تقنيات التصميم العالمية لنقدم لك قطعاً فنية وليست مجرد أثاث.
+            </p>
+        </div>
+    </section>
+
+    <!-- 3. Services Section -->
+    <section class="section-padding services">
+        <div class="container">
+            <h2 class="section-title reveal">خدماتنا المتميزة</h2>
+            
+            <div class="services-grid">
+                <!-- A. Doors & Decor -->
+                <div class="service-card reveal">
+                    <i class="fa-solid fa-door-open service-icon"></i>
+                    <h3>الأبواب والديكورات</h3>
+                    <p>تصاميم أبواب رئيسية تخطف الأنظار مع زخارف CNC دقيقة.</p>
+                    <ul>
+                        <li>أبواب خشبية فاخرة</li>
+                        <li>بانوهات ونقشات جدارية</li>
+                        <li>ديكورات متاجر ومجالس</li>
+                    </ul>
+                </div>
+
+                <!-- B. Office Furniture -->
+                <div class="service-card reveal">
+                    <i class="fa-solid fa-briefcase service-icon"></i>
+                    <h3>الأثاث المكتبي والتجاري</h3>
+                    <p>تصميمات تزيد الإنتاجية وتعزز هوية شركتك بلمسة فخامة.</p>
+                    <ul>
+                        <li>مكاتب مدراء تنفيذية</li>
+                        <li>طاولات اجتماعات ذكية</li>
+                        <li>وحدات تخزين مدمجة</li>
+                    </ul>
+                </div>
+
+                <!-- C. Home Furniture -->
+                <div class="service-card reveal">
+                    <i class="fa-solid fa-couch service-icon"></i>
+                    <h3>الأثاث المنزلي المخصص</h3>
+                    <p>قطع أثاث تُفصل خصيصاً لتناسب مساحتك وذوقك الشخصي.</p>
+                    <ul>
+                        <li>غرف نوم مودرن وكلاسيك</li>
+                        <li>وحدات كونسول وتلفاز</li>
+                        <li>حلول تخزين مبتكرة</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Why Choose Us -->
+    <section class="section-padding features">
+        <div class="container">
+            <h2 class="section-title reveal">لماذا تختارنا؟</h2>
+            <div class="features-grid">
+                <div class="feature-box reveal">
+                    <i class="fa-solid fa-gem fa-2x gold-text"></i>
+                    <h3>جودة لا تُساوم</h3>
+                    <p>استخدام خشب الزان التركي والسنديان الطبيعي لضمان المتانة.</p>
+                </div>
+                <div class="feature-box reveal">
+                    <i class="fa-solid fa-shield-halved fa-2x gold-text"></i>
+                    <h3>مقاومة وعمر طويل</h3>
+                    <p>معالجة احترافية ضد الرطوبة وتغيرات الطقس.</p>
+                </div>
+                <div class="feature-box reveal">
+                    <i class="fa-solid fa-clock fa-2x gold-text"></i>
+                    <h3>دقة في المواعيد</h3>
+                    <p>التزام تام بخطط زمنية واضحة للتسليم والتركيب.</p>
+                </div>
+                <div class="feature-box reveal">
+                    <i class="fa-solid fa-building-columns fa-2x gold-text"></i>
+                    <h3>سجل مشاريع قوي</h3>
+                    <p>خبرة ممتدة في تنفيذ مشاريع الفنادق والجهات الرسمية.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-overlay">
+            <div class="container contact-content reveal">
+                <h2 class="section-title">تواصل معنا</h2>
+                <p>نحن بانتظار تحويل رؤيتك إلى واقع ملموس</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon-circle">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <h4>العنوان</h4>
+                        <p>المملكة العربية السعودية، جدة</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon-circle">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <h4>الجوال</h4>
+                        <p style="direction: ltr;">+966 56 766 6691</p>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon-circle">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <h4>البريد الإلكتروني</h4>
+                        <p>info@abuhamdi-decor.com</p>
+                    </div>
+                </div>
+
+                <a href="tel:+966567666691" class="btn-luxury">اتصل الآن</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>جميع الحقوق محفوظة &copy; 2024 معامل ديكورات أبو حمدي الحديثة</p>
+        </div>
+    </footer>
+
+    <!-- Script for Scroll Animations -->
+    <script>
+        // دالة بسيطة لإظهار العناصر عند التمرير
+        window.addEventListener('scroll', reveal);
+
+        function reveal(){
+            var reveals = document.querySelectorAll('.reveal');
+
+            for(var i = 0; i < reveals.length; i++){
+                var windowheight = window.innerHeight;
+                var revealtop = reveals[i].getBoundingClientRect().top;
+                var revealpoint = 150;
+
+                if(revealtop < windowheight - revealpoint){
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+        // تفعيل الكشف مرة واحدة عند التحميل للتأكد
+        reveal();
+    </script>
+</body>
+</html>
